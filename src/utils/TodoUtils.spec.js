@@ -1,4 +1,4 @@
-import { getAll, add, getOne, deleteOne, changeState, assign, update } from './TodoUtils';
+import { add, getOne, deleteOne, changeState, assign, update } from './TodoUtils';
 
 describe('The Todo List', () => {
 
@@ -7,11 +7,6 @@ describe('The Todo List', () => {
         { id: 0, title: 'Hello', description: 'Something', complexity: '10', state: 'created', assignedTo: null },
         { id: 1, title: 'Hello again', description: 'Something again', complexity: '5', state: 'active', assignedTo: 'Batman' }
     ];
-
-
-    it('should return all todo items', () => {
-        expect(getAll(todos)).toEqual(todos);
-    });
 
     it('should be possible to add new todo items', () => {
         const newTodo = { id: 2, title: 'New Todo', description: 'Something new', complexity: '8', state: 'created', assignedTo: null };

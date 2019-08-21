@@ -1,4 +1,5 @@
 import React from 'react';
+import WithTodoUtils from '../../hocs';
 import List from '../list';
 import TodoForm from '../todo-form';
 
@@ -12,4 +13,4 @@ const App = () => {
     )
 }
 
-export default App
+export default WithTodoUtils(App);
