@@ -1,0 +1,13 @@
+.todoItem {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid rgb(190, 190, 190);
+    border-radius: 3px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.todoItem__title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,9 @@
+.list {
+    width: calc(25% - 20px);
+    padding: 10px;
+}
+
+.list__title {
+    font-size: 20px;
+    margin: 20px 0;
+}
