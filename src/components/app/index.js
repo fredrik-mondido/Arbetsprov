@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';
+import List from '../list';
 
-const App = () => 
-    <div>Make us proud.</div>
+const App = () => {
+    return (
+        <div>
+            <List />
+        </div>
+    )
+}
 
 export default App
