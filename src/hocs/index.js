@@ -8,12 +8,12 @@ function WithApplicationlogic(Component) {
         const [todos, setTodos] = useState([]);
 
         props['getAll'] = () => todos;
-        props['getOne'] = (todos, id) => getOne(todos, id);
-        props['deleteOne'] = (todos, id) => setTodos(deleteOne(todos, id));
-        props['add'] = (todos, newTodo) => setTodos(add(todos, newTodo));
-        props['changeState'] = (todos, id, newState) => setTodos(changeState(todos, id, newState));
-        props['assign'] = (todos, id, assignee) => setTodos(assign(todos, id, assignee));
-        props['update'] = (todos, id, property, content) => setTodos(update(todos, id, property, content));
+        props['getOne'] = id => getOne(todos, id);
+        props['deleteOne'] = id => setTodos(deleteOne(todos, id));
+        props['add'] = newTodo => setTodos(add(todos, newTodo));
+        props['changeState'] = (id, newState) => setTodos(changeState(todos, id, newState));
+        props['assign'] = (id, assignee) => setTodos(assign(todos, id, assignee));
+        props['update'] = (id, property, content) => setTodos(update(todos, id, property, content));
 
         return <Component {...props} />
     }

@@ -1,16 +1,9 @@
 import React from 'react';
 import WithTodoUtils from '../../hocs';
-import List from '../list';
-import TodoForm from '../todo-form';
+import ActiveView from '../../views/ActiveView';
 
-const App = () => {
-
-    return (
-        <div>
-            <TodoForm title="Create Todo" />
-            <List />
-        </div>
-    )
+const App = props => {
+    return <ActiveView {...props} />
 }
 
 export default WithTodoUtils(App);
