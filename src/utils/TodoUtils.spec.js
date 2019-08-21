@@ -9,7 +9,7 @@ describe('The Todo List', () => {
     ];
 
     it('should be possible to add new todo items', () => {
-        const newTodo = { id: 2, title: 'New Todo', description: 'Something new', complexity: '8', state: 'created', assignedTo: null };
+        const newTodo = { title: 'New Todo', description: 'Something new', complexity: '8', state: 'created', assignedTo: null };
         const expected = [
             { id: 0, title: 'Hello', description: 'Something', complexity: '10', state: 'created', assignedTo: null },
             { id: 1, title: 'Hello again', description: 'Something again', complexity: '5', state: 'active', assignedTo: 'Batman' },
