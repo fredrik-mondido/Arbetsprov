@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { add, getOne, deleteOne, changeState, assign, update } from '../utils/TodoUtils';
-import { addTodoSubmitHandler, editTodoSubmitHandler } from '../utils/FormUtils';
+import submitHandler from '../utils/FormUtils';
 
 function WithApplicationlogic(Component) {
     
@@ -15,13 +15,17 @@ function WithApplicationlogic(Component) {
         props['assign'] = (id, assignee) => setTodos(assign(todos, id, assignee));
         props['update'] = (id, property, content) => setTodos(update(todos, id, property, content));
         
-        props['addTodoSubmitHandler'] = e => addTodoSubmitHandler(e, (newTodo) => setTodos(add(todos, newTodo)));
-        // props['editTodoSubmitHandler'] = e => editTodoSubmitHandler(e, (props) => setTodos(update(todos, newTodo)));
-        
         const [activeTodo, setActiveTodo] = useState(null);
         props['activeTodo'] = activeTodo;
+        props['clearActiveTodo'] = () => setActiveTodo(null);
         props['setActiveTodo'] = id => setActiveTodo(getOne(todos, id));
-
+        
+        props['addTodoSubmitHandler'] = e => submitHandler(e, newTodo => setTodos(add(todos, newTodo)));
+        props['editTodoSubmitHandler'] = e => submitHandler(e, updatedTodo => {
+            setTodos(update(todos, updatedTodo));
+            setActiveTodo(null);
+        });
+        
         return <Component {...props} />
     }
 }

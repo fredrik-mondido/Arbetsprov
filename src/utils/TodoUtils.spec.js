@@ -57,15 +57,15 @@ describe('The Todo List', () => {
         expect(assign(todos, 1, 'Wonderwoman')).toEqual(expected);
     })
 
-    it('should be possible to update the title, description or complexity of the todo', () => {
-        const first = { id: 1, title: 'A new title', description: 'Something again', complexity: '5', state: 'active', assignedTo: 'Batman' };
-        expect(update(todos, 1, 'title', 'A new title')[1]).toEqual(first);
-
-        const second = { id: 0, title: 'Hello', description: 'A new description', complexity: '10', state: 'created', assignedTo: null };
-        expect(update(todos, 0, 'description', 'A new description')[0]).toEqual(second);
-
-        const third = { id: 1, title: 'Hello again', description: 'Something again', complexity: '1', state: 'active', assignedTo: 'Batman' };
-        expect(update(todos, 1, 'complexity', '1')[1]).toEqual(third);
+    it('should be possible to update a single property of a todo', () => {
+        expect(update(todos, { id: 1, title: 'A new title' })[1].title).toEqual('A new title');
+        expect(update(todos, { id: 0, description: 'A new description' })[0].description).toEqual('A new description');
+        expect(update(todos, { id: 1, state: 'completed' })[1].state).toEqual('completed');
+    });
+    
+    it('should be possible to update multiple properties of a todo at the same time', () => {
+        const expected = { id: 1, title: 'A new title', description: 'A new description', complexity: '8', state: 'active', assignedTo: 'Batman' };
+        expect(update(todos, { id: 1, title: 'A new title', description: 'A new description', complexity: '8' })[1]).toEqual(expected);
     });
 
 });

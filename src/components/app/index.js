@@ -1,15 +1,15 @@
 import React from 'react';
 import WithTodoUtils from '../../hocs';
-import ActiveView from '../../views/ActiveView';
-import ActiveTodo from '../active-todo';
+import TodosView from '../../views/TodosView';
+import ActiveTodoView from '../active-todo/ActiveTodo';
 
 const App = props => {
 
-    const { activeTodo, setActiveTodo } = props;
+    const { activeTodo } = props;
 
     return activeTodo 
-        ? <ActiveTodo {...activeTodo} setActiveTodo={setActiveTodo} />
-        : <ActiveView {...props} />
+        ? <ActiveTodoView {...props} {...activeTodo}/>
+        : <TodosView {...props}/>
 }
 
 export default WithTodoUtils(App);

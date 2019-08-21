@@ -20,8 +20,7 @@ export const assign = (todoList, id, name) => todoList
         return item;
     });
 
-export const update = (todoList, id, prop, content) => todoList
-    .map(({ ...item }) => {
-        if (item.id === id) item[prop] = content;
-        return item;
-    });
+export const update = (todoList, todoObject) => todoList
+    .map(item => (item.id === todoObject.id) 
+        ? { ...item, ...todoObject }
+        : item);

@@ -2,7 +2,7 @@ import React from 'react';
 import TodoForm from '../components/todo-form';
 import List from '../components/list';
 
-const ActiveView = ({ todos, addTodoSubmitHandler, setActiveTodo }) => {
+const TodosView = ({ todos, addTodoSubmitHandler, setActiveTodo }) => {
 
     return (
         <div>
@@ -17,4 +17,4 @@ const ActiveView = ({ todos, addTodoSubmitHandler, setActiveTodo }) => {
     )
 }
 
-export default ActiveView;
+export default TodosView;

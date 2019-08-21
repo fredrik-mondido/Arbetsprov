@@ -5,6 +5,7 @@
     color: white;
     margin: auto;
     text-align: center;
+    animation: slideDown 0.4s ease-in-out;
 }
 
 .active-todo__title {
@@ -21,4 +22,14 @@
 
 .secondary {
     padding: 20px 80px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(0, -100%);
+    }
+    
+    to {
+        transform: translate(0, 0);
+    }
 }

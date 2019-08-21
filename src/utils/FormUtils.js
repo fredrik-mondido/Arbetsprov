@@ -1,29 +1,18 @@
-export const addTodoSubmitHandler = (e, callback) => {
+export const submitHandler = (e, callback) => {
     e.preventDefault();
 
-    const newTodo = {
-        title: e.target.title.value,
-        description: e.target.description.value,
-        complexity: e.target.complexity.value,
-        state: 'created',
-        assignedTo: null
+    const { id, title, description, complexity, state, assignedTo } = e.target;
+
+    const content = {
+        id: id ? Number.parseInt(id.value, 10) : null,
+        title: title.value,
+        description: description.value,
+        complexity: complexity.value,
+        state: state ? state.value : 'created',
+        assignedTo: assignedTo ? assignedTo.value : null
     }
 
-    callback(newTodo);
+    callback(content);
 }
 
-export const editTodoSubmitHandler = (e, callback) => {
-    e.preventDefault();
-
-    const newTodo = {
-        title: e.target.title.value,
-        description: e.target.description.value,
-        complexity: e.target.complexity.value,
-        state: 'created',
-        assignedTo: null
-    }
-
-    callback(newTodo);
-}
-
-export default addTodoSubmitHandler;
+export default submitHandler;
