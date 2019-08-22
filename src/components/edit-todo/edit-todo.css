@@ -1,11 +1,25 @@
-.edit-todo {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(34, 34, 34);
+.edit-todo-container {
+    background-color: rgb(0, 110, 129);
     color: white;
-    margin: auto;
-    text-align: center;
-    animation: slideDown 0.4s ease-in-out;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 15px;
+}
+
+.form-row {
+    width: 100%;
+}
+
+label {
+    font-size: 24px;
+    width: 25%;
+}
+
+input, textarea {
+    width: 75%;
 }
 
 .edit-todo__title {
@@ -22,14 +36,4 @@
 
 .secondary {
     padding: 20px 80px;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translate(0, -100%);
-    }
-    
-    to {
-        transform: translate(0, 0);
-    }
 }

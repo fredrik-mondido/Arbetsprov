@@ -8,7 +8,7 @@ const TodosView = ({ todos, editTodo, setEditTodo }) => {
 
     return (
         <div>
-            <div className="list-container">
+            <div className="flex-row">
                 {columns.map((name, i) =>
                     <List 
                         key={i}

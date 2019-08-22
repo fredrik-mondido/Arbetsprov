@@ -1,9 +1,12 @@
 import React from 'react';
 import Button from '../button';
 
-const NavBar = ({ toggleAddTodo }) => {
+const NavBar = ({ toggleAddTodo, toggleShowArchive }) => {
     return (
-        <Button clickHandler={toggleAddTodo}>Add todo</Button>
+        <nav>
+            <Button clickHandler={toggleAddTodo}>Add todo</Button>
+            <Button clickHandler={toggleShowArchive}>Show archive</Button>
+        </nav>
     )
 }
 
