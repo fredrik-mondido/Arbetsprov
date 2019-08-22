@@ -14,13 +14,6 @@ export const submitHandler = (e, callback) => {
 
     const { id, title, description, complexity, state, assignedTo } = e.target;
 
-    console.log(e.target.id.value)
-    console.log(e.target.title.value)
-    console.log(e.target.description.value)
-    console.log(e.target.complexity.value)
-    console.log(e.target.state.value)
-    console.log(e.target.assignedTo.value)
-
     const content = {
         id: id ? Number.parseInt(id.value, 10) : null,
         title: title ? title.value : '',

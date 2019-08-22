@@ -33,7 +33,7 @@ p, span, input {
   width: 100vw;
   height: calc(100vh - 80px);
   background-color: rgba(255, 255, 255, 0.8);
-  z-index: 10;
+  z-index: 11;
 }
 
 .overlay-box-container {
@@ -134,7 +134,7 @@ input[type="range"] {
 
 .button-fixed {
   position: fixed;
-  z-index: 9;
+  z-index: 10;
   background-color: rgb(24, 24, 24);
   color: white;
   bottom: 30px;

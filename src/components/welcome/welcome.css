@@ -1,0 +1,80 @@
+.welcome-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+    linear-gradient(to right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 1)
+    ),
+    url('https://images.freecreatives.com/wp-content/uploads/2016/09/tex__free_noise_glitter_texture_by_cocobunnie-d7tzw2j-1.png');
+    box-sizing: border-box;
+    background-color: black;
+    overflow: hidden;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.text-effect {
+    color: #fff;
+    width: 100%;
+    font-size: 140px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgb(147, 199, 147) 20%, rgb(199, 147, 147) 40%, rgb(147, 199, 147) 60%, rgb(199, 147, 147) 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGradient 1.5s linear infinite;
+    display: inline-block;
+}
+
+.postscript {
+    display: inline-block;
+    border: 5px solid rgb(163, 0, 0);
+    background-color: rgb(184, 0, 0);
+    padding: 14px;
+    border-radius: 8px;
+    width: 400px;
+    color: #fff;
+    font-size: 70px;
+    position: relative;
+    bottom: 50px;
+    left: 70px;
+    transform: rotateZ(-10deg);
+    animation: scaleDown 3s linear;
+}
+
+@keyframes textGradient {
+	to {
+		background-position: 200% center;
+	}
+}
+
+@keyframes scaleDown {
+    from {
+        transform: scale(30);
+    }
+
+    50% {
+        transform: scale(30);
+    }
+    
+    75% {
+        transform: scale(30);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}

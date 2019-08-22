@@ -33,15 +33,44 @@ export function WithTodoUtils(Component) {
 
         const [showTodoArchive, setShowTodoArchive] = useState(false);
         props['showArchive'] = showTodoArchive;
-        props['toggleShowArchive'] = () => setShowTodoArchive(!showTodoArchive);
+        props['toggleShowArchive'] = () => {
+            showLoader(2000);
+            setShowTodoArchive(!showTodoArchive);
+        }
 
         const [toggleSort, setToggleSort] = useState(false);
-        props['sortList'] = () => {
+        
+        const sortList = () => {
             setToggleSort(!toggleSort);
             if (toggleSort) todos.sort((a, b) => a.complexity - b.complexity);
             else todos.sort((a, b) => b.complexity - a.complexity);
         }
+
+        props['sortList'] = sortList;
         
+        const [loading, setLoading] = useState(false);
+        
+        const showLoader = timeMs => {
+            setLoading(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, timeMs);
+        }
+        
+        props['loading'] = loading;
+        props['showLoader'] = showLoader;
+        
+        const [welcome, setWelcome] = useState(false);
+        
+        const showWelcome = () => {
+            setWelcome(true);
+            setTimeout(() => {
+                setWelcome(false);
+            }, 9000);
+        }
+        
+        props['welcome'] = welcome;
+        props['showWelcome'] = showWelcome;
 
         return <Component {...props} />
     }

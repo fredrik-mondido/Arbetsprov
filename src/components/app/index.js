@@ -6,10 +6,12 @@ import AddTodoView from '../../views/AddTodoView';
 import ArchivedTodosView from '../../views/ArchivedTodosView';
 import NavBar from '../nav-bar';
 import Button from '../button';
+import Loader from '../loader';
+import Welcome from '../welcome';
 
 const App = props => {
 
-    const { editTodo, addTodo, showArchive, todos, setTodos, sortList } = props;
+    const { editTodo, addTodo, showArchive, todos, setTodos, sortList, loading, showLoader, welcome, showWelcome } = props;
 
     useEffect(() => {
         setTodos(JSON.parse(localStorage.getItem('items')));
@@ -19,16 +21,34 @@ const App = props => {
         localStorage.setItem('items', JSON.stringify(todos));
     }, [todos])
 
+    useEffect(() => {
+        showLoader(2000);
+    }, [setTodos])
+
+    useEffect(() => {
+        showWelcome();
+    }, [])
+
     return (
         <div>
+            {welcome
+                ? <Welcome />
+                : <></>
+            }
             <NavBar {...props} />
-            {showArchive
-                ? <ArchivedTodosView {...props} />
+            {loading
+                ? <Loader />
                 : (
                     <>
-                        {addTodo ? <AddTodoView {...props} /> : <></>}
-                        {editTodo ? <EditTodoView {...props} {...editTodo} /> : <></>}
-                        <TodosView {...props} />
+                        {showArchive
+                            ? <ArchivedTodosView {...props} />
+                            : (
+                                <>
+                                    {addTodo ? <AddTodoView {...props} /> : <></>}
+                                    {editTodo ? <EditTodoView {...props} {...editTodo} /> : <></>}
+                                    <TodosView {...props} />
+                                </>
+                            )}
                     </>
                 )}
             <Button className="button-fixed" clickHandler={() => sortList()}>Toggle Sort</Button>
