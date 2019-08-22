@@ -8,11 +8,11 @@ import NavBar from '../nav-bar';
 
 const App = props => {
 
-    const { toggleAddTodo, toggleShowArchive, editTodo, addTodo, showArchive } = props;
+    const { editTodo, addTodo, showArchive } = props;
 
     return (
         <div>
-            <NavBar toggleAddTodo={toggleAddTodo} toggleShowArchive={toggleShowArchive} />
+            <NavBar {...props} />
             {addTodo ? <AddTodoView {...props} /> : <></>}
             {editTodo ? <EditTodoView {...props} {...editTodo} /> : <></>}
             {showArchive ? <ArchivedTodosView {...props} /> : <></>}

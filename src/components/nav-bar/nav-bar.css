@@ -10,8 +10,13 @@ nav {
     font-size: 24px;
     text-transform: uppercase;
     color: white;
+    background-color: rgb(141, 141, 141);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: rgb(122, 122, 122);
 }
 
 .--green {
