@@ -27,7 +27,8 @@ const App = props => {
 
     useEffect(() => {
         showWelcome();
-    }, [])
+    });
+
 
     return (
         <div>

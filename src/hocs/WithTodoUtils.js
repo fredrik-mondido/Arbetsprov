@@ -39,7 +39,7 @@ export function WithTodoUtils(Component) {
         }
 
         const [toggleSort, setToggleSort] = useState(false);
-        
+
         const sortList = () => {
             setToggleSort(!toggleSort);
             if (toggleSort) todos.sort((a, b) => a.complexity - b.complexity);
@@ -47,28 +47,27 @@ export function WithTodoUtils(Component) {
         }
 
         props['sortList'] = sortList;
-        
+
         const [loading, setLoading] = useState(false);
-        
+
         const showLoader = timeMs => {
             setLoading(true);
             setTimeout(() => {
                 setLoading(false);
             }, timeMs);
         }
-        
+
         props['loading'] = loading;
         props['showLoader'] = showLoader;
-        
-        const [welcome, setWelcome] = useState(false);
-        
+
+        const [welcome, setWelcome] = useState(true);
+
         const showWelcome = () => {
-            setWelcome(true);
             setTimeout(() => {
                 setWelcome(false);
-            }, 9000);
+            }, 6000);
         }
-        
+
         props['welcome'] = welcome;
         props['showWelcome'] = showWelcome;
 
