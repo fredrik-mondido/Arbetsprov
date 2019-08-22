@@ -8,6 +8,7 @@ export function WithTodoUtils(Component) {
 
         const [todos, setTodos] = useState([]);
         props['todos'] = todos;
+        props['setTodos'] = setTodos;
         props['getOne'] = id => getOne(todos, id);
         props['deleteTodo'] = id => setTodos(deleteOne(todos, id));
         props['add'] = newTodo => setTodos(add(todos, newTodo));

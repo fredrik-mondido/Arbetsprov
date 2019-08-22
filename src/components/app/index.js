@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import WithTodoUtils from '../../hocs';
 import TodosView from '../../views/TodosView';
 import EditTodoView from '../../views/EditTodoView';
@@ -8,7 +8,15 @@ import NavBar from '../nav-bar';
 
 const App = props => {
 
-    const { editTodo, addTodo, showArchive } = props;
+    const { editTodo, addTodo, showArchive, todos, setTodos } = props;
+
+    useEffect(() => {
+        setTodos(JSON.parse(localStorage.getItem('items')));
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('items', JSON.stringify(todos));
+    }, [todos])
 
     return (
         <div>
