@@ -4,3 +4,8 @@
     background-color: rgb(235, 235, 235);
     z-index: 10;
 }
+
+.archive-container > * {
+    width: 90%;
+    margin: auto;
+}

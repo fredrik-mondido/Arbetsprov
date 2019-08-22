@@ -8,14 +8,12 @@ const ArchivedTodosView = props => {
 
     return (
         <div className="todos-view-container archive-container --slideInLeft">
-            <div className="flex-row">
-                <List
-                    todos={todos}
-                    column="archived"
-                    title="Archived"
-                    {...props}
-                />
-            </div>
+            <List
+                todos={todos}
+                column="archived"
+                title="Archived"
+                {...props}
+            />
         </div>
     )
 }
