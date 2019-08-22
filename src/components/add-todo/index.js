@@ -6,13 +6,15 @@ const AddTodo = ({ title, submitHandler, toggleAddTodo }) => {
 
     return (
         <div className="overlay-box-container add-todo-container">
-            <h2 className="add-todo__title">{title}</h2>
+            <h2 className="form-title">{title}</h2>
             <form className="form-container" onSubmit={submitHandler} autoComplete="off">
                 <div className="form-row">
-                    <label htmlFor="title">Title:</label><input id="title" name="title" type="text" required autoFocus/>
+                    <label htmlFor="title">Title:</label>
+                    <input id="title" name="title" type="text" required autoFocus />
                 </div>
                 <div className="form-row">
-                    <label htmlFor="description">Description:</label><textarea id="description" name="description" />
+                    <label htmlFor="description">Description:</label>
+                    <textarea id="description" name="description" />
                 </div>
                 <div className="form-row">
                     <label htmlFor="complexity">Complexity:</label>
@@ -21,7 +23,8 @@ const AddTodo = ({ title, submitHandler, toggleAddTodo }) => {
                     <p className="range-scale">10</p>
                 </div>
                 <div className="form-row">
-                    <label htmlFor="assignedTo">Assign to:</label><input id="assignedTo" name="assignedTo" type="text" />
+                    <label htmlFor="assignedTo">Assign to:</label>
+                    <input id="assignedTo" name="assignedTo" type="text" />
                 </div>
                 <input className="button button--green" type="submit" value="Add" />
             </form>

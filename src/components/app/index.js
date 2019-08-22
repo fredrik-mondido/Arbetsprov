@@ -12,7 +12,7 @@ const App = props => {
 
     useEffect(() => {
         setTodos(JSON.parse(localStorage.getItem('items')));
-    }, [])
+    }, [setTodos])
 
     useEffect(() => {
         localStorage.setItem('items', JSON.stringify(todos));
