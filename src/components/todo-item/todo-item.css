@@ -15,6 +15,11 @@
     justify-content: space-between;
 }
 
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
     font-size: 20px;
     margin-bottom: 5px;
@@ -23,7 +28,7 @@
 
 .description {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-top: 8px;
 }
 
 .complexity {
@@ -31,6 +36,7 @@
 }
 
 .assigned-to {
+    width: 80%;
     margin-bottom: 5px;
     font-size: 12px;
 }
@@ -56,4 +62,19 @@
 
 .complexity--green {
     background-color: rgb(114, 199, 114);
+}
+
+.button__on-hold {
+    font-size: 9px;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    background-color: rgb(253, 198, 45);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button__on-hold:hover {
+    background-color: rgb(238, 174, 0);
+    cursor: pointer;
 }
