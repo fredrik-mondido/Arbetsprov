@@ -1,3 +1,12 @@
+const clearForm = ({ children }) => {
+    Array.prototype.forEach.call(children, elem => {
+        if (elem.nodeName === 'INPUT' || elem.nodeName === 'TEXTAREA') {
+            if (elem.type.match(/^text/)) elem.value = '';
+            if (elem.type === 'number') elem.value = '5';
+        }
+    })
+}
+
 export const submitHandler = (e, callback) => {
     e.preventDefault();
 
@@ -13,6 +22,7 @@ export const submitHandler = (e, callback) => {
     }
 
     callback(content);
+    clearForm(e.target);
 }
 
 export default submitHandler;
