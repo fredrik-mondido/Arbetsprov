@@ -4,7 +4,7 @@ import Button from '../button';
 
 const EditTodo = props => {
 
-    const { id, title, description, complexity, assignedTo, clearEditTodo, editTodoSubmitHandler, formTitle } = props;
+    const { id, title, description, state, complexity, assignedTo, clearEditTodo, editTodoSubmitHandler, formTitle } = props;
 
     return (
         <div className="overlay-box-container edit-todo-container">
@@ -26,9 +26,10 @@ const EditTodo = props => {
                 </div>
                 <div className="form-row">
                     <label htmlFor="assigned">Assigned to:</label>
-                    <input type="text" id="assignedTo" name="assignedTo" />{assignedTo || ''}
+                    <input type="text" id="assignedTo" name="assignedTo" defaultValue={assignedTo}/>
                 </div>
                 <input type="hidden" id="id" name="id" value={id} />
+                <input type="hidden" id="state" name="state" value={state} />
                 <input type="submit" className="button button--black" value="Update" />
                 <Button className="button" clickHandler={clearEditTodo}>Cancel</Button>
             </form>
