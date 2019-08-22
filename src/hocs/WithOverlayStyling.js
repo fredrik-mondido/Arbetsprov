@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WithOverlayStyling(Component) {
+export function WithOverlayStyling(Component) {
 
     return function ComponentWithStyledDiv(props) {
     

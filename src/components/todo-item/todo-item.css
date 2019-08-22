@@ -2,20 +2,58 @@
     background-color: white;
     border: 2px solid rgb(190, 190, 190);
     border-radius: 3px;
-    line-height: 1.4;
     margin-bottom: 10px;
 }
 
 .todo-content-container {
+    line-height: 1.4;
     padding: 15px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
 }
 
 .title {
     font-size: 20px;
     margin-bottom: 5px;
+    width: 80%;
 }
 
 .description {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+.complexity {
+    font-size: 12px;
+}
+
+.assigned-to {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.complexity__index {
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 6px;
+    text-align: center;
+    padding: 3px;
+    width: 17px;
+    position: relative;
+    bottom: 1px;
+}
+
+.complexity--red {
+    background-color: #ec7474;
+}
+
+.complexity--yellow {
+    background-color: rgb(255, 255, 0);
+}
+
+.complexity--green {
+    background-color: rgb(114, 199, 114);
 }
