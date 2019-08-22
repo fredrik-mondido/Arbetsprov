@@ -21,12 +21,17 @@ const App = props => {
     return (
         <div>
             <NavBar {...props} />
-            {addTodo ? <AddTodoView {...props} /> : <></>}
-            {editTodo ? <EditTodoView {...props} {...editTodo} /> : <></>}
-            {showArchive ? <ArchivedTodosView {...props} /> : <></>}
-            <TodosView {...props} />
+            {showArchive
+                ? <ArchivedTodosView {...props} />
+                : (
+                    <>
+                        {addTodo ? <AddTodoView {...props} /> : <></>}
+                        {editTodo ? <EditTodoView {...props} {...editTodo} /> : <></>}
+                        <TodosView {...props} />
+                    </>
+                )}
         </div>
-    )
-}
-
+        )
+    }
+    
 export default WithTodoUtils(App);
