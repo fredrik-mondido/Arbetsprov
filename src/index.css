@@ -25,17 +25,64 @@ p, span, input {
 
 .overlay-container {
   position: absolute;
+  display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .overlay-box-container {
-    width: 50vw;
-    height: 50vh;
-    margin: auto;
-    text-align: center;
-    animation: slideDown 0.4s ease-in-out;
+  width: 40vw;
+  padding: 30px;
+  animation: slideDown 0.4s ease-in-out;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 30px;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+  padding: 8px 0;
+}
+
+.range-scale {
+  position: relative;
+  top: 10px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 24px;
+  width: 25%;
+  margin-top: 5px;
+  padding-right: 20px;
+}
+
+.field-container {
+  width: 75%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+input, textarea {
+  width: 75%;
+  font-size: 24px;
+  padding: 5px;
+  resize: none;
+  border: none;
+}
+
+input[type="range"] {
+  width: 60%;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  top: 5px;
 }
 
 .flex-row {
@@ -44,6 +91,38 @@ p, span, input {
   width: 100%;
   background-color: rgb(231, 185, 185);
   height: 100vh;
+}
+
+.button {
+  padding: 20px 10px;
+  margin: 20px 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: rgb(29, 126, 0);
+  color: white;
+  width: 100%;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(20, 87, 0);
+}
+
+.button--secondary {
+  padding: 20px 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: rgb(231, 231, 231);
+  width: 100%;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button--secondary:hover {
+  background-color: rgb(192, 192, 192);
 }
 
 @keyframes slideDown {

@@ -1,8 +1,10 @@
 const clearForm = ({ children }) => {
-    Array.prototype.forEach.call(children, elem => {
-        if (elem.nodeName === 'INPUT' || elem.nodeName === 'TEXTAREA') {
-            if (elem.type.match(/^text/)) elem.value = '';
-            if (elem.type === 'number') elem.value = '5';
+    Array.prototype.forEach.call(children, ({ lastChild }) => {
+        if (lastChild) {
+            if (lastChild.nodeName === 'INPUT' || lastChild.nodeName === 'TEXTAREA') {
+                if (lastChild.type.match(/^text/)) lastChild.value = '';
+                if (lastChild.type === 'number' || lastChild.type === 'range') lastChild.value = '5';
+            }
         }
     })
 }
