@@ -1,18 +1,21 @@
 .todoItem {
     background-color: white;
-    padding: 15px;
     border: 2px solid rgb(190, 190, 190);
     border-radius: 3px;
     line-height: 1.4;
     margin-bottom: 10px;
-    transition: background-color 0.1s ease-in-out;
 }
 
-.todoItem:hover {
-    background-color: lightgrey;
+.todo-content-container {
+    padding: 15px;
 }
 
-.todoItem__title {
+.title {
     font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 14px;
     margin-bottom: 5px;
 }

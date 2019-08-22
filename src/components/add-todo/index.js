@@ -2,14 +2,14 @@ import React from 'react';
 import './add-todo.css';
 import Button from '../button';
 
-const TodoForm = ({ title, submitHandler, toggleAddTodo }) => {
+const AddTodo = ({ title, submitHandler, toggleAddTodo }) => {
 
     return (
         <div className="overlay-box-container add-todo-container">
             <h2 className="add-todo__title">{title}</h2>
             <form className="form-container" onSubmit={submitHandler} autoComplete="off">
                 <div className="form-row">
-                    <label htmlFor="title">Title:</label><input id="title" name="title" type="text" required />
+                    <label htmlFor="title">Title:</label><input id="title" name="title" type="text" required autoFocus/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="description">Description:</label><textarea id="description" name="description" />
@@ -30,4 +30,4 @@ const TodoForm = ({ title, submitHandler, toggleAddTodo }) => {
     )
 }
 
-export default TodoForm;
+export default AddTodo;

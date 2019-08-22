@@ -25,6 +25,7 @@ export const submitHandler = (e, callback) => {
 
     callback(content);
     clearForm(e.target);
+    title.focus();
 }
 
 export default submitHandler;

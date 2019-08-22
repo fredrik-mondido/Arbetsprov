@@ -1,9 +1,10 @@
-.list {
-    width: calc(25% - 20px);
+.list-container {
+    width: calc(25% - 22px);
     padding: 10px;
 }
 
 .list__title {
     font-size: 20px;
-    margin: 20px 0;
+    margin: 20px 0 20px 0;
+    text-align: center;
 }

@@ -10,7 +10,7 @@ const EditTodo = props => {
         <div className="overlay-box-container edit-todo-container">
             <form className="form-container" onSubmit={editTodoSubmitHandler} autoComplete="off">
                 <div className="form-row">
-                    <label htmlFor="title">Title: <input className="edit-todo__title" id="title" name="title" type="text" defaultValue={title} /></label>
+                    <label htmlFor="title">Title: <input className="edit-todo__title" id="title" name="title" type="text" defaultValue={title} autoFocus/></label>
                 </div>
                 <div className="form-row">
                     <label htmlFor="description">Description: <textarea className="edit-todo__description" id="description" name="description" defaultValue={description}></textarea></label>
