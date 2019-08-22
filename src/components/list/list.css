@@ -8,3 +8,10 @@
     margin: 20px 0 20px 0;
     text-align: center;
 }
+
+.placeholder-message {
+    margin-top: 40px;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}

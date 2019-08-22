@@ -7,17 +7,19 @@ const List = ({ todos, column, title, editTodo, setEditTodo, updateTodo, deleteT
         <div className="list-container">
             <h3 className="list__title">{title}</h3>
             <ol className="list">
-                {todos
-                    .filter(item => item.state === column)
-                    .map((item, i) =>
-                        <li key={i}>
-                            <TodoItem {...item}
-                                editTodo={editTodo}
-                                setEditTodo={setEditTodo}
-                                updateTodo={updateTodo}
-                                deleteTodo={deleteTodo}
-                            />
-                        </li>)
+                {todos.length === 0 && column === 'created'
+                    ? <p className="placeholder-message">You haven't created any todos yet!</p>
+                    : todos
+                        .filter(item => item.state === column)
+                        .map((item, i) =>
+                            <li key={i}>
+                                <TodoItem {...item}
+                                    editTodo={editTodo}
+                                    setEditTodo={setEditTodo}
+                                    updateTodo={updateTodo}
+                                    deleteTodo={deleteTodo}
+                                />
+                            </li>)
                 }
             </ol>
         </div>

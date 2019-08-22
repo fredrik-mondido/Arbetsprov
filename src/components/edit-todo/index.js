@@ -23,7 +23,7 @@ const EditTodo = props => {
                 </div>
                 <input type="submit" className="button" value="Update" />
                 <input type="hidden" id="id" name="id" value={id} />
-                <Button className="button--secondary" clickHandler={clearEditTodo}>Cancel</Button>
+                <Button className="button" clickHandler={clearEditTodo}>Cancel</Button>
             </form>
         </div>
     )

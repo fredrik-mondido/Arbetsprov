@@ -23,9 +23,9 @@ const AddTodo = ({ title, submitHandler, toggleAddTodo }) => {
                 <div className="form-row">
                     <label htmlFor="assignedTo">Assign to:</label><input id="assignedTo" name="assignedTo" type="text" />
                 </div>
-                <input className="button" type="submit" value="Add" />
+                <input className="button button--green" type="submit" value="Add" />
             </form>
-            <Button className="button--secondary" clickHandler={toggleAddTodo}>Done</Button>
+            <Button className="button" clickHandler={toggleAddTodo}>Done</Button>
         </div>
     )
 }
