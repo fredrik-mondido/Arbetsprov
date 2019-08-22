@@ -3,8 +3,9 @@ import List from '../components/list';
 import formatTitle from '../utils/formatTitle';
 import './todos-view.css';
 
-const TodosView = ({ todos, editTodo, setEditTodo, update }) => {
+const TodosView = props => {
 
+    const { todos, editTodo, setEditTodo, update } = props;
     const columns = ['created', 'active', 'completed', 'onHold'];
 
     return (
@@ -19,6 +20,7 @@ const TodosView = ({ todos, editTodo, setEditTodo, update }) => {
                         editTodo={editTodo}
                         setEditTodo={setEditTodo}
                         updateTodo={update}
+                        {...props}
                     />
                 )}
             </div>

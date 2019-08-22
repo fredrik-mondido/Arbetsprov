@@ -2,7 +2,10 @@ import React from 'react';
 import TodoItem from '../todo-item';
 import './list.css';
 
-const List = ({ todos, column, title, editTodo, setEditTodo, updateTodo, deleteTodo }) => {
+const List = props => {
+
+    const { todos, column, title, editTodo, setEditTodo, updateTodo, deleteTodo } = props;
+
     return (
         <div className="list-container">
             <h3 className="list__title">{title}</h3>

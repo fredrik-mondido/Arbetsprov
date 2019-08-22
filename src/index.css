@@ -95,6 +95,8 @@ input[type="range"] {
 .flex-row {
   display: flex;
   flex-flow: row wrap;
+  height: calc(100vh - 80px);
+  overflow: scroll;
 }
 
 .button {
@@ -128,6 +130,29 @@ input[type="range"] {
 
 .button--black:hover {
   background-color: rgb(0, 0, 0);
+}
+
+.button-fixed {
+  position: fixed;
+  z-index: 9;
+  background-color: rgb(24, 24, 24);
+  color: white;
+  bottom: 30px;
+  right: 30px;
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.button-fixed:hover {
+  box-shadow: 1px 1px 5px 2px #000000ba;
 }
 
 .--border-right {

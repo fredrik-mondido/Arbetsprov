@@ -5,10 +5,11 @@ import EditTodoView from '../../views/EditTodoView';
 import AddTodoView from '../../views/AddTodoView';
 import ArchivedTodosView from '../../views/ArchivedTodosView';
 import NavBar from '../nav-bar';
+import Button from '../button';
 
 const App = props => {
 
-    const { editTodo, addTodo, showArchive, todos, setTodos } = props;
+    const { editTodo, addTodo, showArchive, todos, setTodos, sortList } = props;
 
     useEffect(() => {
         setTodos(JSON.parse(localStorage.getItem('items')));
@@ -30,8 +31,9 @@ const App = props => {
                         <TodosView {...props} />
                     </>
                 )}
+            <Button className="button-fixed" clickHandler={() => sortList()}>Toggle Sort</Button>
         </div>
-        )
-    }
-    
+    )
+}
+
 export default WithTodoUtils(App);

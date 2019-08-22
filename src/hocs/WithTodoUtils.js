@@ -35,6 +35,14 @@ export function WithTodoUtils(Component) {
         props['showArchive'] = showTodoArchive;
         props['toggleShowArchive'] = () => setShowTodoArchive(!showTodoArchive);
 
+        const [toggleSort, setToggleSort] = useState(false);
+        props['sortList'] = () => {
+            setToggleSort(!toggleSort);
+            if (toggleSort) todos.sort((a, b) => a.complexity - b.complexity);
+            else todos.sort((a, b) => b.complexity - a.complexity);
+        }
+        
+
         return <Component {...props} />
     }
 }
