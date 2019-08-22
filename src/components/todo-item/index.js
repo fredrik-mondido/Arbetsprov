@@ -5,7 +5,7 @@ import complexityColor from '../../utils/complexityColor';
 
 const TodoItem = props => {
 
-    const { id, title, description, complexity, assignedTo, updateTodo } = props;
+    const { id, title, description, complexity, assignedTo, updateTodo, state } = props;
 
     const color = complexityColor(complexity);
 
@@ -18,7 +18,11 @@ const TodoItem = props => {
                 </div>
                 <div className="bottom-row">
                     <p className="assigned-to">Assigned to: {assignedTo || 'No one'}</p>
-                    <button onClick={() => updateTodo({ id, state: 'onHold' })} className="button__on-hold">On hold</button>
+                    {
+                        state.match(/active|completed/) ?
+                            <button onClick={() => updateTodo({ id, state: 'onHold' })} className="button__on-hold">On hold</button>
+                            : <></>
+                    }
                 </div>
                 <p className="description">{description}</p>
             </div>
