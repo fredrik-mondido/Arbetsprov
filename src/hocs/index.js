@@ -16,15 +16,19 @@ function WithApplicationlogic(Component) {
         props['update'] = (id, property, content) => setTodos(update(todos, id, property, content));
         
         const [activeTodo, setActiveTodo] = useState(null);
-        props['activeTodo'] = activeTodo;
-        props['clearActiveTodo'] = () => setActiveTodo(null);
-        props['setActiveTodo'] = id => setActiveTodo(getOne(todos, id));
+        props['editTodo'] = activeTodo;
+        props['clearEditTodo'] = () => setActiveTodo(null);
+        props['setEditTodo'] = id => setActiveTodo(getOne(todos, id));
         
         props['addTodoSubmitHandler'] = e => submitHandler(e, newTodo => setTodos(add(todos, newTodo)));
         props['editTodoSubmitHandler'] = e => submitHandler(e, updatedTodo => {
             setTodos(update(todos, updatedTodo));
             setActiveTodo(null);
         });
+
+        const [addTodo, setAddTodo] = useState(false);
+        props['addTodo'] = addTodo;
+        props['toggleAddTodo'] = () => setAddTodo(!addTodo);
         
         return <Component {...props} />
     }

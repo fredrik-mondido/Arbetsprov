@@ -1,4 +1,4 @@
-.active-todo {
+.edit-todo {
     width: 100vw;
     height: 100vh;
     background-color: rgb(34, 34, 34);
@@ -8,15 +8,15 @@
     animation: slideDown 0.4s ease-in-out;
 }
 
-.active-todo__title {
+.edit-todo__title {
     font-size: 72px;
 }
 
-.active-todo__description {
+.edit-todo__description {
     font-size: 40px;
 }
 
-.active-todo__detail {
+.edit-todo__detail {
     font-size: 40px;
 }
 
