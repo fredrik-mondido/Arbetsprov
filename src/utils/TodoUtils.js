@@ -1,4 +1,7 @@
-export const add = (todoList, item) => [...todoList, { ...item, id: todoList.length || 0 }];
+export const add = (todoList, item) => {
+    todoList = todoList || [];
+    [...todoList, { ...item, id: todoList.length || 0 }];
+}
 
 export const getOne = (todoList, id) => todoList.find(item => item.id === id);
 
