@@ -1,0 +1,53 @@
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 30px;
+  }
+  
+  .form-row {
+    width: 100%;
+    display: flex;
+    padding: 8px 0;
+  }
+  
+  .range-scale {
+    position: relative;
+    top: 10px;
+    font-weight: bold;
+  }
+  
+  label {
+    font-size: 24px;
+    width: 25%;
+    margin-top: 5px;
+    padding-right: 20px;
+  }
+  
+  .field-container {
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
+  }
+  
+  input, textarea {
+    width: 75%;
+    font-size: 24px;
+    padding: 5px;
+    resize: none;
+    border: none;
+  }
+  
+  input[type="range"] {
+    width: 60%;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: 5px;
+  }
+
+  .form-title {
+    font-size: 52px;
+    text-align: center;
+    margin: 24px 0 10px 0;
+  }
