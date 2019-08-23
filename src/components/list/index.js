@@ -9,10 +9,9 @@ const List = props => {
     return (
         <div className="list-container">
             <h3 className="list__title">{title}</h3>
-            <ol className="list">
-                {todos.length === 0 && column === 'created'
-                    ? <p className="placeholder-message">You haven't created any todos yet!</p>
-                    : todos
+            {todos ?
+                <ol className="list">
+                    {todos
                         .filter(item => item.state === column)
                         .map((item, i) =>
                             <li key={i}>
@@ -23,8 +22,9 @@ const List = props => {
                                     deleteTodo={deleteTodo}
                                 />
                             </li>)
-                }
-            </ol>
+                    }
+                </ol>
+                : <></>}
         </div>
     )
 }
