@@ -41,6 +41,7 @@ export function WithTodoUtils(Component) {
         const [toggleSort, setToggleSort] = useState(false);
 
         const sortList = () => {
+            if (!todos) return;
             setToggleSort(!toggleSort);
             if (toggleSort) todos.sort((a, b) => a.complexity - b.complexity);
             else todos.sort((a, b) => b.complexity - a.complexity);
