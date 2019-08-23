@@ -18,7 +18,7 @@ const App = props => {
     }, [setTodos])
 
     useEffect(() => {
-        localStorage.setItem('items', JSON.stringify(todos));
+        localStorage.setItem('items', JSON.stringify(todos || []));
     }, [todos])
 
     useEffect(() => {
