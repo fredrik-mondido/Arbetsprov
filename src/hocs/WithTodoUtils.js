@@ -65,6 +65,7 @@ export function WithTodoUtils(Component) {
         const showWelcome = () => {
             setTimeout(() => {
                 setWelcome(false);
+                sessionStorage.setItem('active', 'true');
             }, 6000);
         }
 

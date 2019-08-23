@@ -27,12 +27,12 @@ const App = props => {
 
     useEffect(() => {
         showWelcome();
-    });
+    }, []);
 
 
     return (
         <div>
-            {welcome
+            {welcome && !sessionStorage.getItem('active')
                 ? <Welcome />
                 : <></>
             }
