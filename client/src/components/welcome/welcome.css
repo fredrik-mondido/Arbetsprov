@@ -40,12 +40,15 @@
 }
 
 .postscript {
+    font-family: 'impact', sans-serif;
+    text-transform: uppercase;
     display: inline-block;
     border: 5px solid rgb(163, 0, 0);
     background-color: rgb(184, 0, 0);
-    padding: 14px;
+    padding: 25px 15px;
+    line-height: 1.2;
     border-radius: 8px;
-    width: 400px;
+    width: 450px;
     color: #fff;
     font-size: 70px;
     position: relative;
@@ -53,6 +56,47 @@
     left: 70px;
     transform: rotateZ(-10deg);
     animation: scaleDown 3s linear;
+}
+
+@media only screen and (max-width: 375px) {
+    .text-effect {
+        font-size: 52px;
+    }
+
+    .postscript {
+        padding: 10px;
+        font-size: 18px;
+        width: 200px;
+        bottom: 20px;
+        left: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 376px) {
+    .text-effect {
+        font-size: 62px;
+    }
+
+    .postscript {
+        font-size: 24px;
+        width: 250px;
+        bottom: 20px;
+        left: 30px;
+    }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .text-effect {
+        font-size: 100px;
+    }
+
+    .postscript {
+        font-size: 40px;
+        width: 400px;
+        bottom: 30px;
+        left: 60px;
+        animation: scaleDown 4s linear;
+    }
 }
 
 @keyframes textGradient {
@@ -63,18 +107,19 @@
 
 @keyframes scaleDown {
     from {
-        transform: scale(30);
+        transform: scale(100);
     }
 
     50% {
-        transform: scale(30);
+        transform: scale(80);
     }
     
     75% {
-        transform: scale(30);
+        transform: scale(60);
     }
 
     to {
         transform: scale(0);
     }
 }
+
