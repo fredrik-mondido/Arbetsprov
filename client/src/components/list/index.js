@@ -11,19 +11,17 @@ const List = props => {
             <h3 className="list__title">{title}</h3>
             {todos ?
                 <ol className="list">
-                    {todos.length === 0 && column === 'created'
-                        ? <p className="placeholder-message">You haven't created any todos yet!</p>
-                        : todos
-                            .filter(item => item.state === column)
-                            .map((item, i) =>
-                                <li key={i}>
-                                    <TodoItem {...item}
-                                        editTodo={editTodo}
-                                        setEditTodo={setEditTodo}
-                                        updateTodo={updateTodo}
-                                        deleteTodo={deleteTodo}
-                                    />
-                                </li>)
+                    {todos
+                        .filter(item => item.state === column)
+                        .map((item, i) =>
+                            <li key={i}>
+                                <TodoItem {...item}
+                                    editTodo={editTodo}
+                                    setEditTodo={setEditTodo}
+                                    updateTodo={updateTodo}
+                                    deleteTodo={deleteTodo}
+                                />
+                            </li>)
                     }
                 </ol>
                 : <></>}
