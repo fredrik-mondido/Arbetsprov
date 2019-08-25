@@ -52,7 +52,7 @@ const App = props => {
                             )}
                     </>
                 )}
-            <Button className="button-fixed" clickHandler={() => sortList()}>Toggle Sort</Button>
+            <Button className="button-fixed" clickHandler={() => sortList()}>Sort List</Button>
         </div>
     )
 }
