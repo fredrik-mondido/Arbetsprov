@@ -6,6 +6,6 @@
 }
 
 .archive-container > * {
-    width: 90%;
+    width: calc(100% - 22px);
     margin: auto;
 }
