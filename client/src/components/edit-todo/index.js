@@ -20,13 +20,15 @@ const EditTodo = props => {
                 </div>
                 <div className="form-row">
                     <label htmlFor="complexity">Complexity:</label>
-                    <p className="range-scale">0</p>
-                    <input id="complexity" name="complexity" type="range" min="0" max="10" step="1" defaultValue={complexity} />
-                    <p className="range-scale">10</p>
+                    <div className="complexity-container">
+                        <p className="range-scale">0</p>
+                        <input id="complexity" name="complexity" type="range" min="0" max="10" step="1" defaultValue={complexity} />
+                        <p className="range-scale">10</p>
+                    </div>
                 </div>
                 <div className="form-row">
                     <label htmlFor="assigned">Assigned to:</label>
-                    <input type="text" id="assignedTo" name="assignedTo" defaultValue={assignedTo}/>
+                    <input type="text" id="assignedTo" name="assignedTo" defaultValue={assignedTo} />
                 </div>
                 <input type="hidden" id="id" name="id" value={id} />
                 <input type="hidden" id="state" name="state" value={state} />

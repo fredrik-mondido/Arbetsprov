@@ -7,13 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: 
-    linear-gradient(to right,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 1)
-    ),
-    url('https://images.freecreatives.com/wp-content/uploads/2016/09/tex__free_noise_glitter_texture_by_cocobunnie-d7tzw2j-1.png');
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1)), url('https://images.freecreatives.com/wp-content/uploads/2016/09/tex__free_noise_glitter_texture_by_cocobunnie-d7tzw2j-1.png');
     box-sizing: border-box;
     background-color: black;
     overflow: hidden;
@@ -62,7 +56,6 @@
     .text-effect {
         font-size: 52px;
     }
-
     .postscript {
         padding: 10px;
         font-size: 18px;
@@ -76,7 +69,6 @@
     .text-effect {
         font-size: 62px;
     }
-
     .postscript {
         font-size: 24px;
         width: 250px;
@@ -89,7 +81,6 @@
     .text-effect {
         font-size: 100px;
     }
-
     .postscript {
         font-size: 40px;
         width: 400px;
@@ -100,26 +91,22 @@
 }
 
 @keyframes textGradient {
-	to {
-		background-position: 200% center;
-	}
+    to {
+        background-position: 200% center;
+    }
 }
 
 @keyframes scaleDown {
     from {
         transform: scale(100);
     }
-
     50% {
         transform: scale(80);
     }
-    
     75% {
         transform: scale(60);
     }
-
     to {
         transform: scale(0);
     }
 }
-

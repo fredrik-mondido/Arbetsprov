@@ -18,17 +18,19 @@ const AddTodo = ({ title, submitHandler, toggleAddTodo }) => {
                 </div>
                 <div className="form-row">
                     <label htmlFor="complexity">Complexity:</label>
-                    <p className="range-scale">0</p>
-                    <input id="complexity" name="complexity" type="range" min="0" max="10" step="1" defaultValue="5" />
-                    <p className="range-scale">10</p>
+                    <div className="complexity-container">
+                        <p className="range-scale">0</p>
+                        <input id="complexity" name="complexity" type="range" min="0" max="10" step="1" defaultValue="5" />
+                        <p className="range-scale">10</p>
+                    </div>
                 </div>
                 <div className="form-row">
                     <label htmlFor="assignedTo">Assign to:</label>
                     <input id="assignedTo" name="assignedTo" type="text" />
                 </div>
                 <input className="button button--green" type="submit" value="Add" />
+                <Button className="button" clickHandler={toggleAddTodo}>Done</Button>
             </form>
-            <Button className="button" clickHandler={toggleAddTodo}>Done</Button>
         </div>
     )
 }
