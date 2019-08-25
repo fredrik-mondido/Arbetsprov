@@ -12,19 +12,23 @@ const TodoItem = props => {
     return (
         <div className="todoItem">
             <div className="todo-content-container">
-                <div className="top-row">
+                <div className="card-row">
                     <h3 className="title">{title}</h3>
-                    <p className="complexity">CI<span className={`complexity__index ${color}`}>{complexity}</span></p>
+                    <div className="complexity-container">
+                        <p className="complexity">CI<span className={`complexity__index ${color}`}>{complexity}</span></p>
+                    </div>
                 </div>
-                <div className="bottom-row">
-                    <p className="assigned-to">Assigned to: {assignedTo || 'No one'}</p>
+                <div className="card-row">
                     {
                         state.match(/active|completed/) ?
-                            <button onClick={() => updateTodo({ id, state: 'onHold' })} className="button__on-hold">On hold</button>
+                            <button onClick={() => updateTodo({ id, state: 'onHold' })} className="button__on-hold">Put on hold</button>
                             : <></>
                     }
+                    <p className="assigned-to">Assigned to: {assignedTo || 'No one'}</p>
                 </div>
-                <p className="description">{description}</p>
+                <div className="card-row">
+                    <p className="description">{description}</p>
+                </div>
             </div>
             <TodoButtons {...props} />
         </div>

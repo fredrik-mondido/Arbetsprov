@@ -1,10 +1,10 @@
 .list-container {
-    width: calc(25% - 22px);
+    width: 100%;
     padding: 10px;
 }
 
 .list__title {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0 20px 0;
     text-align: center;
 }
@@ -16,14 +16,22 @@
     font-size: 14px;
 }
 
-@media screen and (max-width: 425px) {
+@media only screen and (min-width: 425px) {
     .list-container {
-        width: calc(100% - 22px);
+        width: calc(50% - 22px);
+    }
+
+    .list__title {
+        font-size: 20px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (min-width: 1024px) {
     .list-container {
-        width: calc(50% - 22px);
+        width: calc(25% - 22px);
+    }
+
+    .list__title {
+        font-size: 22px;
     }
 }

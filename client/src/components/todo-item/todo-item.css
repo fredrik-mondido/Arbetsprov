@@ -7,38 +7,31 @@
 
 .todo-content-container {
     line-height: 1.4;
-    padding: 15px;
+    padding: 10px;
 }
 
-.top-row {
+.card-row {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-}
-
-.bottom-row {
-    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 8px;
     justify-content: space-between;
 }
 
 .title {
-    font-size: 20px;
-    margin-bottom: 5px;
-    width: 80%;
+    font-size: 16px;
+    margin-bottom: 8px;
+    word-break: break-all;
+    width: 100%;
+    line-height: 1.2;
 }
 
-.description {
-    font-size: 14px;
-    margin-top: 8px;
+.complexity-container {
+    width: 100%;
 }
 
 .complexity {
-    font-size: 12px;
-}
-
-.assigned-to {
-    width: 80%;
-    margin-bottom: 5px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .complexity__index {
@@ -46,26 +39,39 @@
     border-radius: 50%;
     margin-left: 6px;
     text-align: center;
-    padding: 3px;
-    width: 17px;
-    position: relative;
+    width: 14px;
+    height: 14px;
     bottom: 1px;
 }
 
 .complexity--red {
     background-color: #ec7474;
+    border: 2px solid #92030388;
 }
 
 .complexity--yellow {
     background-color: rgb(255, 255, 0);
+    border: 2px solid rgba(209, 160, 0, 0.589);
 }
 
 .complexity--green {
     background-color: rgb(114, 199, 114);
+    border: 2px solid rgba(2, 150, 2, 0.534);
+}
+
+.assigned-to {
+    width: 80%;
+    font-size: 12px;
+}
+
+.description {
+    font-size: 14px;
 }
 
 .button__on-hold {
     font-size: 9px;
+    padding: 5px 8px;
+    margin-bottom: 4px;
     border: none;
     display: inline-block;
     text-align: center;
@@ -77,4 +83,70 @@
 .button__on-hold:hover {
     background-color: rgb(238, 174, 0);
     cursor: pointer;
+}
+
+@media only screen and (min-width: 425px) {
+    .todo-content-container {
+        padding: 15px;
+    }
+    
+    .card-row {
+        margin-bottom: 6px;
+    }
+    
+    .title {
+        font-size: 22px;
+        margin-bottom: 6px;
+        width: 80%;
+        line-height: 1.2;
+    }
+    
+    .complexity-container {
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    
+    .description {
+        font-size: 16px;
+    }
+    
+    .complexity {
+        font-size: 12px;
+    }
+    
+    .assigned-to {
+        width: 80%;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    
+    .complexity__index {
+        padding: 5px;
+        width: 15px;
+        bottom: 1px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .todo-content-container {
+        padding: 18px;
+    }
+
+    .title {
+        width: 70%;
+    }
+
+    .complexity-container {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    
+    .complexity__index {
+        padding: 3px;
+        width: 14px;
+    }
 }

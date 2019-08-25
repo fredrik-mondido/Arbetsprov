@@ -19,7 +19,7 @@
   border-top: none;
 }
 
-.complexity-container {
+.complexity-field-container {
   display: flex;
   justify-content: space-between;
   align-items: center;

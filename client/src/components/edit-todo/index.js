@@ -12,7 +12,7 @@ const EditTodo = props => {
             <form className="form-container" onSubmit={editTodoSubmitHandler} autoComplete="off">
                 <div className="form-row">
                     <label htmlFor="title">Title:</label>
-                    <input id="title" name="title" type="text" defaultValue={title} autoFocus />
+                    <input id="title" name="title" type="text" defaultValue={title} required autoFocus />
                 </div>
                 <div className="form-row">
                     <label htmlFor="description">Description:</label>
@@ -20,7 +20,7 @@ const EditTodo = props => {
                 </div>
                 <div className="form-row">
                     <label htmlFor="complexity">Complexity:</label>
-                    <div className="complexity-container">
+                    <div className="complexity-field-container">
                         <p className="range-scale">0</p>
                         <input id="complexity" name="complexity" type="range" min="0" max="10" step="1" defaultValue={complexity} />
                         <p className="range-scale">10</p>
