@@ -1,5 +1,6 @@
 import React from 'react';
 import { Enums } from '../constants';
+import { getUniqueId } from '../../utils';
 
 export const Navbar = ({ addTask, setNewTask, newTask }) => {
     return (
@@ -10,6 +11,7 @@ export const Navbar = ({ addTask, setNewTask, newTask }) => {
                     placeholder="Add Task"
                     value={newTask ? newTask.title : ''}
                     onChange={event => setNewTask({
+                        id: getUniqueId(),
                         title: event.target.value,
                         status: Enums.TASK_STATUS.created
                     })}
