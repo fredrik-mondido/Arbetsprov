@@ -1,5 +1,6 @@
 import React from 'react';
-import { BootstrapModal } from '../common/BootstrapModal';
+import PropTypes from 'prop-types';
+import { BootstrapModal } from '../common';
 
 export const EditTaskModal = props => {
 
@@ -40,4 +41,12 @@ export const EditTaskModal = props => {
             </button>
         </div>
     </BootstrapModal>;
+};
+
+EditTaskModal.propTypes = {
+    showModal: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    task: PropTypes.object.isRequired,
+    setNewTask: PropTypes.func.isRequired,
+    editTask: PropTypes.func.isRequired
 };

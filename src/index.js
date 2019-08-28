@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app';
+import { App } from './components';
 import * as serviceWorker from './serviceWorker';
 import { withLogic } from './HOC/withLogic';
 

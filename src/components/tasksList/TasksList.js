@@ -17,5 +17,6 @@ export const TasksList = React.memo(({ tasks,
 
 TasksList.propTypes = {
     tasks: PropTypes.array.isRequired,
-    displayConfirmationDialog: PropTypes.func.isRequired
+    displayConfirmationDialog: PropTypes.func.isRequired,
+    displayEditTaskModal: PropTypes.func.isRequired
 };
