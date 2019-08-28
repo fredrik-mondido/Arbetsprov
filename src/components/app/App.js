@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Navbar } from '../navbar';
 import { Enums, PromptMessages } from '../constants';
-import { TasksList } from '../tasksList/TasksList';
+import { TasksList } from '../tasksList';
 import { ConfirmationDialog } from '../common';
-import { EditTaskModal } from '../editTaskModals/EditTaskModal';
+import { EditTaskModal } from '../editTaskModal';
 
 export const App = props => {
 

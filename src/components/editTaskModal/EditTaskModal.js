@@ -40,6 +40,15 @@ export const EditTaskModal = props => {
                         { [...Array(11).keys()].map(index => <option key={index}>{ index }</option>) }
                     </select>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="taskAssignee">Assignee</label>
+                    <input
+                        className="form-control"
+                        value={task ? task.assignee : ''}
+                        id="taskAssignee"
+                        placeholder="Assignee"
+                        onChange={event => setNewTask({...task, assignee: event.target.value})} />
+                </div>
             </form>
         </div>
         <div className="modal-footer">

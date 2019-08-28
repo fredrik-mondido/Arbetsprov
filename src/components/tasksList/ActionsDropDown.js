@@ -7,9 +7,7 @@ export const ActionsDropDown = props => {
 
     const { taskNextStatus, changeStatus, task } = props;
 
-    const taskActions = {
-        'Edit': Enums.TASK_ACTIONS.edit
-    };
+    const taskActions = { 'Edit': Enums.TASK_ACTIONS.edit };
 
     return <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {
