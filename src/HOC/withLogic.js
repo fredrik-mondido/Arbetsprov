@@ -4,8 +4,9 @@ export const withLogic = WrappedComponent => props => {
 
     const [newTask, setNewTask] = useState(null);
     const [tasks, setTasks] = useState(null);
-    const [showConfirmationDialog, setConfirmationDialogVisibility] = useState(false);
     const [selectedTaskId, setSelectedTaskId] = useState(-1);
+    const [showConfirmationDialog, setConfirmationDialogVisibility] = useState(false);
+    const [showEditTaskModal, setEditTaskModalVisibility] = useState(false);
 
     useEffect(() => {
         if (!tasks) {
@@ -21,7 +22,18 @@ export const withLogic = WrappedComponent => props => {
         setSelectedTaskId(taskId);
     };
 
+    const displayEditTaskModal = taskId => {
+        setEditTaskModalVisibility(true);
+        setSelectedTaskId(taskId);
+        setNewTask({...tasks.find(task => task.id === taskId)});
+    };
+
     const hideConfirmationDialog = () => setConfirmationDialogVisibility(false);
+
+    const hideEditTaskModal = () => {
+        setEditTaskModalVisibility(false);
+        setNewTask(null);
+    }
 
     const addTask = event => {
         event.preventDefault();
@@ -40,6 +52,14 @@ export const withLogic = WrappedComponent => props => {
         hideConfirmationDialog();
     };
 
+    const editTask = () => {
+        const updatedTasks = [...tasks];
+        const index = updatedTasks.findIndex(task => task.id === selectedTaskId);
+        updatedTasks[index] = newTask;
+        setTasks(updatedTasks);
+        hideEditTaskModal();
+    };
+
     return <WrappedComponent
         tasks={tasks}
         newTask={newTask}
@@ -49,5 +69,9 @@ export const withLogic = WrappedComponent => props => {
         displayConfirmationDialog={displayConfirmationDialog}
         hideConfirmationDialog={hideConfirmationDialog}
         removeTask={removeTask}
+        showEditTaskModal={showEditTaskModal}
+        displayEditTaskModal={displayEditTaskModal}
+        hideEditTaskModal={hideEditTaskModal}
+        editTask={editTask}
         {...props} />;
 };

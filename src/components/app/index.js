@@ -3,11 +3,13 @@ import { Navbar } from '../navbar';
 import { Enums, PromptMessages } from '../constants';
 import { TasksList } from '../tasksList/TasksList';
 import { ConfirmationDialog } from '../common/ConfirmationDialog';
+import { EditTaskModal } from '../editTaskModals/EditTaskModal';
 
 export default props => {
-    const { 
+    const {
         addTask, setNewTask, newTask, tasks, removeTask, showConfirmationDialog,
-        displayConfirmationDialog, hideConfirmationDialog
+        displayConfirmationDialog, hideConfirmationDialog, showEditTaskModal,
+        displayEditTaskModal, hideEditTaskModal, editTask
     } = props
 
     return <div>
@@ -17,6 +19,7 @@ export default props => {
                 {
                     tasks ? Object.keys(Enums.TASK_STATUS).map((status, index) => <div key={index} className="col-sm">
                         <TasksList
+                            displayEditTaskModal={displayEditTaskModal}
                             tasks={tasks.filter(task => task.status === Enums.TASK_STATUS[status])}
                             displayConfirmationDialog={displayConfirmationDialog}/>
                     </div>
@@ -29,5 +32,11 @@ export default props => {
             showModal={showConfirmationDialog}
             successCallback={removeTask}
             message={PromptMessages.DELETE_TASK_PROMPT} />
+        <EditTaskModal
+            task={newTask}
+            setNewTask={setNewTask}
+            editTask={editTask}
+            showModal={showEditTaskModal}
+            handleClose={hideEditTaskModal} />
     </div>
 };

@@ -5,5 +5,10 @@ export const Enums = {
         completed: 3,
         onhold: 4,
         deleted: 5
+    },
+    TASK_ACTIONS: {
+        edit: 1,
+        setComplexity: 2,
+        delete: 3,
     }
 };

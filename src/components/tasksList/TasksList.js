@@ -1,18 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { TaskListItem } from './TaskListItem';
 
-export const TasksList = React.memo(({ tasks, displayConfirmationDialog }) => <ul className="list-group">
-    {
-        tasks.map((task, index) => <li key={index} className="list-group-item">
-            <span className="col-sm-8">{ task.title }</span>
-            { 
-                task.complexity
-                    ? <span className="badge badge-danger">{ task.complexity }</span>
-                    : null
-            }
-            <button type="button" className="close"
-                onClick={() => displayConfirmationDialog(task.id)}>
-                <span aria-hidden="true" className="delete-btn">&times;</span>
-            </button>
-        </li>)
-    }
-</ul>);
+export const TasksList = React.memo(({ tasks,
+    displayConfirmationDialog, displayEditTaskModal }) => <ul className="list-group">
+        {
+            tasks.map((task, index) => <TaskListItem
+                displayConfirmationDialog={displayConfirmationDialog}
+                displayEditTaskModal={displayEditTaskModal}
+                task={task}
+                key={index} />
+            )
+        }
+    </ul>
+);
+
+TasksList.propTypes = {
+    tasks: PropTypes.array.isRequired,
+    displayConfirmationDialog: PropTypes.func.isRequired
+};
