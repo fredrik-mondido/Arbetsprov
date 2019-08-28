@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Enums } from '../components/constants';
 
 export const withLogic = WrappedComponent => props => {
 
@@ -7,6 +8,7 @@ export const withLogic = WrappedComponent => props => {
     const [selectedTaskId, setSelectedTaskId] = useState(-1);
     const [showConfirmationDialog, setConfirmationDialogVisibility] = useState(false);
     const [showEditTaskModal, setEditTaskModalVisibility] = useState(false);
+    const [selectedScreen, setSelectedScreen] = useState(Enums.APP_SCREENS.dashboard);
 
     useEffect(() => {
         if (!tasks) {
@@ -82,5 +84,7 @@ export const withLogic = WrappedComponent => props => {
         hideEditTaskModal={hideEditTaskModal}
         editTask={editTask}
         changeStatus={changeStatus}
+        selectedScreen={selectedScreen}
+        setSelectedScreen={setSelectedScreen}
         {...props} />;
 };

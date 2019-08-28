@@ -2,11 +2,35 @@ import React from 'react';
 import { Enums } from '../constants';
 import { getUniqueId } from '../../utils';
 
-export const Navbar = ({ addTask, setNewTask, newTask }) => {
-    return (
-        <nav className="navbar navbar-dark bg-dark">
-            <a className="navbar-brand" href="/">Navbar</a>
-            <form className="form-inline">
+export const Navbar = ({ addTask, setNewTask,
+    newTask, setSelectedScreen }) => <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+        <button
+            className="btn btn-link navbar-brand"
+            onClick={() => setSelectedScreen(Enums.APP_SCREENS.dashboard)}>
+            Arbetsprov
+        </button>
+        <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon" />
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                    <button
+                        className="btn btn-link nav-link"
+                        onClick={() => setSelectedScreen(Enums.APP_SCREENS.deletedTasks)}>
+                        Deleted Tasks
+                    </button>
+                </li>
+            </ul>
+            <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2"
                     placeholder="Add Task"
                     value={newTask ? newTask.title : ''}
@@ -21,6 +45,5 @@ export const Navbar = ({ addTask, setNewTask, newTask }) => {
                     Add
                 </button>
             </form>
-        </nav>
-    );
-};
+        </div>
+    </nav>;

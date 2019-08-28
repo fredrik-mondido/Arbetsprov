@@ -10,5 +10,9 @@ export const Enums = {
         edit: 1,
         setComplexity: 2,
         delete: 3,
+    },
+    APP_SCREENS: {
+        dashboard: 1,
+        deletedTasks: 2
     }
 };

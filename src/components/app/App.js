@@ -1,37 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Navbar } from '../navbar';
-import { Enums, PromptMessages } from '../constants';
-import { TasksList } from '../tasksList';
+import { PromptMessages } from '../constants';
 import { ConfirmationDialog } from '../common';
 import { EditTaskModal } from '../editTaskModal';
+import { DisplayScreen } from '../displayScreen';
 
 export const App = props => {
 
     const {
         addTask, setNewTask, newTask, tasks, removeTask, showConfirmationDialog,
         displayConfirmationDialog, hideConfirmationDialog, showEditTaskModal,
-        displayEditTaskModal, hideEditTaskModal, editTask, changeStatus
+        displayEditTaskModal, hideEditTaskModal, editTask, changeStatus,
+        selectedScreen, setSelectedScreen
     } = props;
 
     return <div>
-        <Navbar addTask={addTask} setNewTask={setNewTask} newTask={newTask} />
-        <div className="container-fluid">
-            <div className="row main-screen">
-                {
-                    tasks ? Object.keys(Enums.TASK_STATUS).map((status, index) => <div key={index} className="col-sm">
-                        <h6 className="text-center text-capitalize">{ status }</h6>
-                        <TasksList
-                            changeStatus={changeStatus}
-                            displayEditTaskModal={displayEditTaskModal}
-                            status={Enums.TASK_STATUS[status]}
-                            tasks={tasks.filter(task => task.status === Enums.TASK_STATUS[status])}
-                            displayConfirmationDialog={displayConfirmationDialog}/>
-                    </div>
-                    ) : null
-                }
-            </div>
-        </div>
+        <Navbar
+            addTask={addTask}
+            setSelectedScreen={setSelectedScreen}
+            setNewTask={setNewTask}
+            newTask={newTask} />
+        <DisplayScreen
+            displayConfirmationDialog={displayConfirmationDialog}
+            displayEditTaskModal={displayEditTaskModal}
+            selectedScreen={selectedScreen}
+            tasks={tasks}
+            changeStatus={changeStatus} />
         <ConfirmationDialog
             handleClose={hideConfirmationDialog}
             showModal={showConfirmationDialog}
@@ -59,5 +54,7 @@ App.propTypes = {
     editTask: PropTypes.func.isRequired,
     newTask: PropTypes.object,
     tasks: PropTypes.array,
-    changeStatus: PropTypes.func.isRequired
+    changeStatus: PropTypes.func.isRequired,
+    selectedScreen: PropTypes.number.isRequired,
+    setSelectedScreen: PropTypes.func.isRequired
 };
