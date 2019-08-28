@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Enums, TASK_ACTION_HANDLERS } from '../constants';
+import { ActionsDropDown } from './ActionsDropDown';
 
 export const TaskListItem = props => {
 
-    const { displayConfirmationDialog, task } = props;
-
-    const taskActions = {
-        'Edit': Enums.TASK_ACTIONS.edit,
-        'Delete': Enums.TASK_ACTIONS.delete
-    };
+    const {
+        displayConfirmationDialog, task, displayEditTaskModal,
+        taskNextStatus, changeStatus
+    } = props;
 
     return <li className="list-group-item">
-        <span className="col-sm-8">{task.title}</span>
+        <button className="btn btn-link" onClick={() => displayEditTaskModal(task.id)}>{ task.title }</button>
         {
             task.complexity
-                ? <span className="badge badge-danger">{task.complexity}</span>
+                ? <span className="badge badge-info">{task.complexity}</span>
                 : null
         }
         <button
@@ -25,18 +23,13 @@ export const TaskListItem = props => {
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
-            <span aria-hidden="true">&Xi;</span>
+            <span aria-hidden="true">⁝</span>
         </button>
-        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {
-                Object.keys(taskActions).map(action => <button
-                    key={taskActions[action]}
-                    onClick={() => props[TASK_ACTION_HANDLERS[taskActions[action]]](task.id)}
-                    className="dropdown-item">
-                    { action }
-                </button>)
-            }
-        </div>
+        <ActionsDropDown
+            task={task}
+            displayEditTaskModal={displayEditTaskModal}
+            taskNextStatus={taskNextStatus}
+            changeStatus={changeStatus} />
         <button type="button" className="close"
             onClick={() => displayConfirmationDialog(task.id)}>
             <span aria-hidden="true" className="delete-btn">&times;</span>
@@ -46,5 +39,8 @@ export const TaskListItem = props => {
 
 TaskListItem.propTypes = {
     displayConfirmationDialog: PropTypes.func.isRequired,
-    task: PropTypes.object.isRequired
+    task: PropTypes.object.isRequired,
+    displayEditTaskModal: PropTypes.func.isRequired,
+    taskNextStatus: PropTypes.array.isRequired,
+    changeStatus: PropTypes.func.isRequired
 };

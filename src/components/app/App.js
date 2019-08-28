@@ -7,11 +7,12 @@ import { ConfirmationDialog } from '../common';
 import { EditTaskModal } from '../editTaskModals/EditTaskModal';
 
 export const App = props => {
+
     const {
         addTask, setNewTask, newTask, tasks, removeTask, showConfirmationDialog,
         displayConfirmationDialog, hideConfirmationDialog, showEditTaskModal,
-        displayEditTaskModal, hideEditTaskModal, editTask
-    } = props
+        displayEditTaskModal, hideEditTaskModal, editTask, changeStatus
+    } = props;
 
     return <div>
         <Navbar addTask={addTask} setNewTask={setNewTask} newTask={newTask} />
@@ -19,9 +20,11 @@ export const App = props => {
             <div className="row fullscreen">
                 {
                     tasks ? Object.keys(Enums.TASK_STATUS).map((status, index) => <div key={index} className="col-sm">
-                        <h6 className="text-center">{ status }</h6>
+                        <h6 className="text-center text-capitalize">{ status }</h6>
                         <TasksList
+                            changeStatus={changeStatus}
                             displayEditTaskModal={displayEditTaskModal}
+                            status={Enums.TASK_STATUS[status]}
                             tasks={tasks.filter(task => task.status === Enums.TASK_STATUS[status])}
                             displayConfirmationDialog={displayConfirmationDialog}/>
                     </div>
@@ -56,4 +59,5 @@ App.propTypes = {
     editTask: PropTypes.func.isRequired,
     newTask: PropTypes.object,
     tasks: PropTypes.array,
+    changeStatus: PropTypes.func.isRequired
 };

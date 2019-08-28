@@ -33,7 +33,7 @@ export const withLogic = WrappedComponent => props => {
     const hideEditTaskModal = () => {
         setEditTaskModalVisibility(false);
         setNewTask(null);
-    }
+    };
 
     const addTask = event => {
         event.preventDefault();
@@ -60,6 +60,13 @@ export const withLogic = WrappedComponent => props => {
         hideEditTaskModal();
     };
 
+    const changeStatus = (taskId, status) => {
+        const updatedTasks = [...tasks];
+        const index = updatedTasks.findIndex(task => task.id === taskId);
+        updatedTasks[index].status = status;
+        setTasks(updatedTasks);
+    };
+
     return <WrappedComponent
         tasks={tasks}
         newTask={newTask}
@@ -73,5 +80,6 @@ export const withLogic = WrappedComponent => props => {
         displayEditTaskModal={displayEditTaskModal}
         hideEditTaskModal={hideEditTaskModal}
         editTask={editTask}
+        changeStatus={changeStatus}
         {...props} />;
 };

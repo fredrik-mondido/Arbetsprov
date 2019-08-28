@@ -26,9 +26,9 @@ export const ConfirmationDialog = props => {
     );
 };
 
-BootstrapModal.propTypes = {
+ConfirmationDialog.propTypes = {
     handleClose: PropTypes.func.isRequired,
     showModal: PropTypes.bool.isRequired,
     successCallback: PropTypes.func.isRequired,
-    message: PropTypes.string.isRequired
+    message: PropTypes.string
 };

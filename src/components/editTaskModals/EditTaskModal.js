@@ -30,6 +30,16 @@ export const EditTaskModal = props => {
                         rows="3"
                         onChange={event => setNewTask({...task, desc: event.target.value})} />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="taskComplexity">Complexity</label>
+                    <select
+                        className="form-control"
+                        value={task ? task.complexity : null}
+                        id="taskComplexity"
+                        onChange={event => setNewTask({ ...task, complexity: event.target.value })}>
+                        { [...Array(11).keys()].map(index => <option key={index}>{ index }</option>) }
+                    </select>
+                </div>
             </form>
         </div>
         <div className="modal-footer">
@@ -46,7 +56,11 @@ export const EditTaskModal = props => {
 EditTaskModal.propTypes = {
     showModal: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
-    task: PropTypes.object.isRequired,
+    task: PropTypes.object,
     setNewTask: PropTypes.func.isRequired,
     editTask: PropTypes.func.isRequired
+};
+
+EditTaskModal.defaultProps = {
+    task: null
 };

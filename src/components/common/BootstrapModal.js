@@ -29,5 +29,5 @@ BootstrapModal.propTypes = {
     handleClose: PropTypes.func.isRequired,
     showModal: PropTypes.bool.isRequired,
     heading: PropTypes.string.isRequired,
-    children: PropTypes.element.isRequired
+    children: PropTypes.array.isRequired
 };
