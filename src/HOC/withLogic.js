@@ -37,12 +37,13 @@ export const withLogic = WrappedComponent => props => {
 
     const addTask = event => {
         event.preventDefault();
+        if (newTask) {
+            const updatedTasks = [...tasks];
+            updatedTasks.push(newTask);
 
-        const updatedTasks = [...tasks];
-        updatedTasks.push(newTask);
-
-        setTasks(updatedTasks);
-        setNewTask(null);
+            setTasks(updatedTasks);
+            setNewTask(null);
+        }
     };
 
     const removeTask = event => {

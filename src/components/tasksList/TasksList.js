@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { TaskListItem } from './TaskListItem';
 import { TASK_NEXT_STATUS, Enums } from '../constants';
+import { getKeyFromValue } from '../../utils';
 
 export const TasksList = React.memo(props => {
 
@@ -17,14 +18,16 @@ export const TasksList = React.memo(props => {
 
     return <ul className="list-group">
         {
-            tasks.map((task, index) => <TaskListItem
-                displayConfirmationDialog={displayConfirmationDialog}
-                displayEditTaskModal={displayEditTaskModal}
-                task={task}
-                key={index}
-                changeStatus={changeStatus}
-                taskNextStatus={taskNextStatus} />
-            )
+            tasks.length
+                ? tasks.map((task, index) => <TaskListItem
+                    displayConfirmationDialog={displayConfirmationDialog}
+                    displayEditTaskModal={displayEditTaskModal}
+                    task={task}
+                    key={index}
+                    changeStatus={changeStatus}
+                    taskNextStatus={taskNextStatus} />
+                )
+                : <span className="text-center text-muted">No tasks {getKeyFromValue(Enums.TASK_STATUS, status)}.</span>
         }
     </ul>
 });

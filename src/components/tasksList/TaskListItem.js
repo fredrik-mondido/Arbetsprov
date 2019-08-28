@@ -10,7 +10,7 @@ export const TaskListItem = props => {
     } = props;
 
     return <li className="list-group-item">
-        <button className="btn btn-link" onClick={() => displayEditTaskModal(task.id)}>{ task.title }</button>
+        <button className="btn btn-link text-break" onClick={() => displayEditTaskModal(task.id)}>{ task.title }</button>
         {
             task.complexity
                 ? <span className="badge badge-info">{task.complexity}</span>

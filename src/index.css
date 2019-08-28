@@ -12,8 +12,7 @@ code {
     monospace;
 }
 
-.fullscreen {
-  height: 100vh;
+.main-screen {
   margin-top: 50px;
 }
 

@@ -17,7 +17,7 @@ export const App = props => {
     return <div>
         <Navbar addTask={addTask} setNewTask={setNewTask} newTask={newTask} />
         <div className="container-fluid">
-            <div className="row fullscreen">
+            <div className="row main-screen">
                 {
                     tasks ? Object.keys(Enums.TASK_STATUS).map((status, index) => <div key={index} className="col-sm">
                         <h6 className="text-center text-capitalize">{ status }</h6>
