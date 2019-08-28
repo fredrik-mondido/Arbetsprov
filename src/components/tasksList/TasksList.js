@@ -27,7 +27,9 @@ export const TasksList = React.memo(props => {
                     changeStatus={changeStatus}
                     taskNextStatus={taskNextStatus} />
                 )
-                : <span className="text-center text-muted">No tasks {getKeyFromValue(Enums.TASK_STATUS, status)}.</span>
+                : <span className="text-center text-muted">
+                    No tasks {getKeyFromValue(Enums.TASK_STATUS, status)}.
+                </span>
         }
     </ul>
 });
