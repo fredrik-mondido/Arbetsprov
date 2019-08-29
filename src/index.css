@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-screen {
+  margin-top: 50px;
+}
+
+.delete-btn {
+  color: red;
+}
+
+.dropdown-subheading {
+  font-size: 12px;
+  margin-left: 12px;
+  color: gray;
+}

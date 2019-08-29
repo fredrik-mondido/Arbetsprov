@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app';
+import { App } from './components';
 import * as serviceWorker from './serviceWorker';
+import { withLogic } from './HOC/withLogic';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const AppWithLogic = withLogic(App);
+
+ReactDOM.render(<AppWithLogic />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
