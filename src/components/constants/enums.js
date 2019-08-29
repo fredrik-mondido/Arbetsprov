@@ -14,5 +14,9 @@ export const Enums = {
     APP_SCREENS: {
         dashboard: 1,
         deletedTasks: 2
+    },
+    SORT_BY_COMPLEXITY: {
+        ascending: 1,
+        descending: 2
     }
 };

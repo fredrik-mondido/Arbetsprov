@@ -12,7 +12,7 @@ export const App = props => {
         addTask, setNewTask, newTask, tasks, removeTask, showConfirmationDialog,
         displayConfirmationDialog, hideConfirmationDialog, showEditTaskModal,
         displayEditTaskModal, hideEditTaskModal, editTask, changeStatus,
-        selectedScreen, setSelectedScreen
+        selectedScreen, setSelectedScreen, tasksSortBy, toggleSorting
     } = props;
 
     return <div>
@@ -22,6 +22,8 @@ export const App = props => {
             setNewTask={setNewTask}
             newTask={newTask} />
         <DisplayScreen
+            tasksSortBy={tasksSortBy}
+            toggleSorting={toggleSorting}
             displayConfirmationDialog={displayConfirmationDialog}
             displayEditTaskModal={displayEditTaskModal}
             selectedScreen={selectedScreen}
@@ -56,5 +58,7 @@ App.propTypes = {
     tasks: PropTypes.array,
     changeStatus: PropTypes.func.isRequired,
     selectedScreen: PropTypes.number.isRequired,
-    setSelectedScreen: PropTypes.func.isRequired
+    setSelectedScreen: PropTypes.func.isRequired,
+    tasksSortBy: PropTypes.object.isRequired,
+    toggleSorting: PropTypes.func.isRequired
 };

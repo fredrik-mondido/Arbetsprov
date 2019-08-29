@@ -7,8 +7,12 @@ export const BootstrapModal = props => {
 
     if (showModal)
         return (
-            <div className="modal show" style={{ display: 'block', paddingRight: '15px'}} tabIndex={-1} role="dialog" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal show"
+                style={{ display: 'block', paddingRight: '15px'}}
+                tabIndex={-1}
+                role="dialog"
+                aria-hidden="true">
+                <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">{ heading }</h5>
