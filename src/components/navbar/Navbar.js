@@ -37,7 +37,8 @@ export const Navbar = ({ addTask, setNewTask,
                     onChange={event => setNewTask({
                         id: getUniqueId(),
                         title: event.target.value,
-                        status: Enums.TASK_STATUS.created
+                        status: Enums.TASK_STATUS.created,
+                        complexity: "0"
                     })}
                     aria-label="Add Task" />
                 <button className="btn btn-outline-secondary my-2 my-sm-0"

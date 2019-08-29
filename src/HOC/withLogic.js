@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Enums } from '../components/constants';
+import { Enums, DEFAULT_STATUS_SORT } from '../components/constants';
 
 export const withLogic = WrappedComponent => props => {
 
@@ -9,6 +9,7 @@ export const withLogic = WrappedComponent => props => {
     const [showConfirmationDialog, setConfirmationDialogVisibility] = useState(false);
     const [showEditTaskModal, setEditTaskModalVisibility] = useState(false);
     const [selectedScreen, setSelectedScreen] = useState(Enums.APP_SCREENS.dashboard);
+    const [tasksSortBy, setTasksSortBy] = useState(DEFAULT_STATUS_SORT);
 
     useEffect(() => {
         if (!tasks) {
@@ -18,6 +19,13 @@ export const withLogic = WrappedComponent => props => {
             localStorage.setItem('tasks', JSON.stringify(tasks));
         }
     }, [tasks]);
+
+    const toggleSorting = status => {
+        if (tasksSortBy[status] === Enums.SORT_BY_COMPLEXITY.ascending)
+            setTasksSortBy({...tasksSortBy, [status]: Enums.SORT_BY_COMPLEXITY.descending});
+        else
+            setTasksSortBy({...tasksSortBy, [status]: Enums.SORT_BY_COMPLEXITY.ascending});
+    };
 
     const displayConfirmationDialog = taskId => {
         setConfirmationDialogVisibility(true);
@@ -86,5 +94,7 @@ export const withLogic = WrappedComponent => props => {
         changeStatus={changeStatus}
         selectedScreen={selectedScreen}
         setSelectedScreen={setSelectedScreen}
+        tasksSortBy={tasksSortBy}
+        toggleSorting={toggleSorting}
         {...props} />;
 };
